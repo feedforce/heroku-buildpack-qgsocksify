@@ -13,6 +13,6 @@ curl -sL --retry 3 --max-time 60 "$QGSOCKSIFY_URL" --output "${CACHE_DIR}/${QGSO
 
 echo '    -> Installing qgsocksify...'
 
-tar xvf "${CACHE_DIR}/${QGSOCKSIFY_FILENAME}"
+tar xf "${CACHE_DIR}/${QGSOCKSIFY_FILENAME}"
 
 echo '    DONE'
