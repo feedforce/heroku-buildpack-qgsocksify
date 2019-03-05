@@ -9,6 +9,8 @@ QGSOCKSIFY_URL="https://s3.amazonaws.com/quotaguard/$QGSOCKSIFY_FILENAME"
 
 echo "    -> Downloading qgsocksify... (${QGSOCKSIFY_URL})"
 
+echo "$CACHE_DIR"
+ls -alF "$CACHE_DIR"
 curl -sL --retry 3 --max-time 60 "$QGSOCKSIFY_URL" --output "${CACHE_DIR}/${QGSOCKSIFY_FILENAME}"
 
 echo '    -> Installing qgsocksify...'
