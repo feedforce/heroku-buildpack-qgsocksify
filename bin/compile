@@ -1,0 +1,18 @@
+#!/bin/sh -eu
+#
+# bin/compile BUILD_DIR CACHE_DIR ENV_DIR
+
+CACHE_DIR=${2:-}
+
+QGSOCKSIFY_FILENAME=quotaguard-socksify-latest.tar.gz
+QGSOCKSIFY_URL="https://s3.amazonaws.com/quotaguard/$QGSOCKSIFY_FILENAME"
+
+echo "    -> Downloading qgsocksify... (${QGSOCKSIFY_URL})"
+
+curl -sL --retry 3 --max-time 60 "$QGSOCKSIFY_URL" --output "${CACHE_DIR}/${QGSOCKSIFY_FILENAME}"
+
+echo '    -> Installing qgsocksify...'
+
+tar xvf "${CACHE_DIR}/${QGSOCKSIFY_FILENAME}"
+
+echo '    DONE'

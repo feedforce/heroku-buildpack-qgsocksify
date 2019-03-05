@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo 'heroku-buildpack-qgsocksify'
+exit 0
