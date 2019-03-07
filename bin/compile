@@ -2,6 +2,7 @@
 #
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
+BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 
 QGSOCKSIFY_FILENAME=quotaguard-socksify-latest.tar.gz
@@ -14,6 +15,6 @@ curl -sL --retry 3 --max-time 60 "$QGSOCKSIFY_URL" --output "${CACHE_DIR}/${QGSO
 
 echo '    -> Installing qgsocksify...'
 
-tar xf "${CACHE_DIR}/${QGSOCKSIFY_FILENAME}"
+tar xf "${CACHE_DIR}/${QGSOCKSIFY_FILENAME}" -C "$BUILD_DIR"
 
 echo '    DONE'
