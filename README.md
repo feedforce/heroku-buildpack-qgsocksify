@@ -15,7 +15,7 @@ Installs from official [qgsocksify binary](https://s3.amazonaws.com/quotaguard/q
 ## Configure from CLI
 
 ```
-$ heroku buildpacks:add https://github.com/feedforce/heroku-buildpack-qgsocksify.git
+$ heroku buildpacks:add https://github.com/masutaka/heroku-buildpack-qgsocksify.git
 ```
 
 ## Configure from app manifest
@@ -24,12 +24,8 @@ $ heroku buildpacks:add https://github.com/feedforce/heroku-buildpack-qgsocksify
 {
   "buildpacks": [
     {
-      "url": "https://github.com/feedforce/heroku-buildpack-qgsocksify.git"
+      "url": "https://github.com/masutaka/heroku-buildpack-qgsocksify.git"
     }
   ]
 }
 ```
-
-## License
-
-MIT © [Feedforce Inc.](https://github.com/feedforce)
