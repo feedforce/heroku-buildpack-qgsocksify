@@ -3,11 +3,49 @@
 # bin/compile BUILD_DIR CACHE_DIR ENV_DIR
 
 BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
 
 QGSOCKSIFY_FILENAME=quotaguard-socksify-latest.tar.gz
 QGSOCKSIFY_URL="https://s3.amazonaws.com/quotaguard/$QGSOCKSIFY_FILENAME"
 
 echo "    -> Downloading qgsocksify... (${QGSOCKSIFY_URL})"
+
+echo "pwd: $(pwd)"
+ls -alF
+
+echo "BUILD_DIR: ${BUILD_DIR}"
+ls -alF "$BUILD_DIR"
+
+echo "CACHE_DIR: ${CACHE_DIR}"
+ls -alF "$CACHE_DIR"
+
+echo "$ ls -alF $CACHE_DIR/build-data"
+ls -alF "$CACHE_DIR/build-data"
+
+echo "$ ls -alF $CACHE_DIR/node"
+ls -alF "$CACHE_DIR/node"
+
+echo "$ ls -alF $CACHE_DIR/node/cache"
+ls -alF "$CACHE_DIR/node/cache"
+
+echo "$ ls -alF $CACHE_DIR/node/cache/node_modules"
+ls -alF "$CACHE_DIR/node/cache/node_modules"
+
+echo "$ cat $CACHE_DIR/build-data/nodejs"
+cat "$CACHE_DIR/build-data/nodejs"
+
+echo "$ cat $CACHE_DIR/build-data/nodejs-prev"
+cat "$CACHE_DIR/build-data/nodejs-prev"
+
+echo "$ cat $CACHE_DIR/node/signature"
+cat "$CACHE_DIR/node/signature"
+
+echo "ENV_DIR: ${ENV_DIR}"
+ls -alF "$ENV_DIR"
+
+echo "$ cat ${ENV_DIR}/HOGE"
+cat "${ENV_DIR}/HOGE"
 
 curl -sL --retry 3 --max-time 60 "$QGSOCKSIFY_URL" --output "$QGSOCKSIFY_FILENAME"
 
